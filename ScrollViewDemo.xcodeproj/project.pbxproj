@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7524BDAA20302FDE0097BEF3 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7524BDA920302FDE0097BEF3 /* TestViewController.m */; };
+		7524BDAD203037C70097BEF3 /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7524BDAC203037C70097BEF3 /* MyScrollView.m */; };
 		756945C21FEE37E100202D62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 756945C11FEE37E100202D62 /* AppDelegate.m */; };
 		756945C51FEE37E100202D62 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756945C41FEE37E100202D62 /* ViewController.m */; };
 		756945C81FEE37E100202D62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756945C61FEE37E100202D62 /* Main.storyboard */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7524BDA820302FDE0097BEF3 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		7524BDA920302FDE0097BEF3 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		7524BDAB203037C70097BEF3 /* MyScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
+		7524BDAC203037C70097BEF3 /* MyScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
 		756945BD1FEE37E100202D62 /* ScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756945C01FEE37E100202D62 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		756945C11FEE37E100202D62 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,6 +68,10 @@
 				756945C11FEE37E100202D62 /* AppDelegate.m */,
 				756945C31FEE37E100202D62 /* ViewController.h */,
 				756945C41FEE37E100202D62 /* ViewController.m */,
+				7524BDAB203037C70097BEF3 /* MyScrollView.h */,
+				7524BDAC203037C70097BEF3 /* MyScrollView.m */,
+				7524BDA820302FDE0097BEF3 /* TestViewController.h */,
+				7524BDA920302FDE0097BEF3 /* TestViewController.m */,
 				756945C61FEE37E100202D62 /* Main.storyboard */,
 				756945C91FEE37E100202D62 /* Assets.xcassets */,
 				756945CB1FEE37E100202D62 /* LaunchScreen.storyboard */,
@@ -144,6 +154,8 @@
 			files = (
 				756945C51FEE37E100202D62 /* ViewController.m in Sources */,
 				756945D01FEE37E100202D62 /* main.m in Sources */,
+				7524BDAA20302FDE0097BEF3 /* TestViewController.m in Sources */,
+				7524BDAD203037C70097BEF3 /* MyScrollView.m in Sources */,
 				756945C21FEE37E100202D62 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEA9M6LGWM;
 				INFOPLIST_FILE = ScrollViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gonghonglou.ScrollViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEA9M6LGWM;
 				INFOPLIST_FILE = ScrollViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gonghonglou.ScrollViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

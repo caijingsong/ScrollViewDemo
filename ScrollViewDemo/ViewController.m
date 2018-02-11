@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TestViewController.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle: @"推出页面" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor redColor];
+    button.layer.cornerRadius = 4.0;
+    button.frame = CGRectMake(100, 300, self.view.frame.size.width-200, 40);
+    [self.view addSubview:button];
+    
+    [button addTarget:self action:@selector(clickButton) forControlEvents:UIControlEventTouchUpInside];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)clickButton {
+    [self.navigationController pushViewController:[TestViewController new] animated:YES];    
 }
-
 
 @end
