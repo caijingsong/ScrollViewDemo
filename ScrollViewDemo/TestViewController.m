@@ -55,9 +55,11 @@
     self.leftTableView.delegate = self;
     self.leftTableView.dataSource = self;
     self.leftTableView.rowHeight = 60;
+    self.leftTableView.tableFooterView = [UIView new];
     self.rightTableView.delegate = self;
     self.rightTableView.dataSource = self;
     self.rightTableView.rowHeight = 80;
+    self.rightTableView.tableFooterView = [UIView new];
     
     // label
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, viewHeight-60, viewWidth, 20)];
@@ -85,7 +87,11 @@
 
 // UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    if (tableView == self.leftTableView) {
+        return 5;
+    } else {
+        return 20;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -113,6 +119,7 @@
 - (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath {
     self.scrollView.scrollEnabled = NO;
 }
+
 - (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(nullable NSIndexPath *)indexPath {
     self.scrollView.scrollEnabled = YES;
 }
