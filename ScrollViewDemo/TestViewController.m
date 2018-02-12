@@ -28,12 +28,6 @@
     [self layoutUI];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.leftTableView reloadData];
-    [self.rightTableView reloadData];
-}
-
 // 页面布局
 - (void)layoutUI {
     self.view.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
@@ -41,12 +35,11 @@
     CGFloat viewHeight = self.view.frame.size.height;
     
     // scroll view
-    self.scrollView = [MyScrollView new];
+    self.scrollView = [[MyScrollView alloc] initWithFrame:self.view.frame];
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.bounces = NO;
     self.scrollView.pagingEnabled = YES;
     self.scrollView.contentSize = CGSizeMake(viewWidth * 2, 0);
-    self.scrollView.frame = self.view.frame;
     [self.view addSubview:self.scrollView];
     
     // left table view
@@ -65,20 +58,20 @@
     self.rightTableView.delegate = self;
     self.rightTableView.dataSource = self;
     self.rightTableView.rowHeight = 80;
+    
     // label
-    UILabel *label = [UILabel new];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, viewHeight-60, viewWidth, 20)];
     label.text = @"滑动此区域可切换页面";
     label.textColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;
-    label.frame = CGRectMake(0, viewHeight-60, viewWidth, 20);
     [self.view addSubview:label];
+    
     // pagControl
-    self.pageControl = [[UIPageControl alloc] init];
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, viewHeight - 50, viewWidth, 50)];
     self.pageControl.numberOfPages = 2;
     self.pageControl.enabled = NO;
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-    self.pageControl.frame = CGRectMake(0, viewHeight - 50, viewWidth, 50);
     [self.view addSubview:self.pageControl];
 }
 
@@ -112,7 +105,7 @@
 // UITableViewDelegate 左划按钮的回调方法
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:NSLocalizedString(@"删除", nil) handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        NSLog(@"---执行删除操作---");
+        NSLog(@"---执行删除操作---%ld", (long)indexPath.row);
     }];
     return @[deleteAction];
 }
